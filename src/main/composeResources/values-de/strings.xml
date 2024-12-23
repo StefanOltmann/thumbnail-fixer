@@ -1,0 +1,16 @@
+<resources>
+    <string name="dragAndDropHere">Drag &amp; drop deine JPG-, PNG- und WebP-Dateien hier</string>
+    <string name="skipExistingThumbnails">Überspringe vorhandene Thumbnails, wenn die Auflösung passt</string>
+    <string name="preserveModificationDates">Dateiänderungsdatum beibehalten</string>
+    <string name="thumbnailResolution">THUMBNAIL-AUFLÖSUNG</string>
+    <string name="compressionQuality">KOMPRESSIONSQUALITÄT</string>
+    <string name="findingFiles">Suche nach Dateien...</string>
+    <string name="processedFiles">{count} Dateien verarbeitet</string>
+    <string name="successful">erfolgreich</string>
+    <string name="skipped">übersprungen</string>
+    <string name="notSupported">nicht unterstützt</string>
+    <string name="failed">fehlgeschlagen</string>
+    <string name="back">Zurück</string>
+    <string name="openExifViewer">Öffne EXIF Viewer</string>
+    <string name="pleaseInstallLibVips">Bitte installiere libvips!</string>
+</resources>
