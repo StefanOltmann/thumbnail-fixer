@@ -39,6 +39,8 @@ import ui.icons.IconBackground
 import ui.theme.AppTypography
 import ui.theme.appColorScheme
 import ui.theme.defaultRoundedCornerShape
+import javax.swing.JOptionPane
+import kotlin.system.exitProcess
 
 const val APP_TITLE = "Thumbnail Fixer"
 
@@ -50,73 +52,88 @@ private val isWindows =
 
 fun main() {
 
-    /*
-     * For Windows we bundle vips, but for macOS it must be installed using Homebrew.
-     */
-    if (!isWindows) {
-        System.setProperty("vipsffm.libpath.vips.override", "/opt/homebrew/lib/libvips.dylib")
-        System.setProperty("vipsffm.libpath.glib.override", "/opt/homebrew/lib/libglib-2.0.dylib")
-        System.setProperty("vipsffm.libpath.gobject.override", "/opt/homebrew/lib/libgobject-2.0.dylib")
-    }
+    try {
 
-    val vipsLoaded: Boolean = try {
+        /*
+         * For Windows we bundle vips, but for macOS it must be installed using Homebrew.
+         */
+        if (!isWindows) {
+            System.setProperty("vipsffm.libpath.vips.override", "/opt/homebrew/lib/libvips.dylib")
+            System.setProperty("vipsffm.libpath.glib.override", "/opt/homebrew/lib/libglib-2.0.dylib")
+            System.setProperty("vipsffm.libpath.gobject.override", "/opt/homebrew/lib/libgobject-2.0.dylib")
+        }
 
-        Vips.init()
+        val vipsLoaded: Boolean = try {
 
-        true
+            Vips.init()
 
-    } catch (ignore: Throwable) {
-        false
-    }
+            true
 
-    application {
+        } catch (ignore: Throwable) {
+            false
+        }
 
-        val windowState = rememberWindowState(
-            size = DpSize(WINDOW_WIDTH.dp, WINDOW_HEIGHT.dp)
-        )
+        application {
 
-        Window(
-            onCloseRequest = ::exitApplication,
-            title = APP_TITLE,
-            undecorated = true,
-            transparent = true,
-            resizable = false,
-            state = windowState
-        ) {
+            val windowState = rememberWindowState(
+                size = DpSize(WINDOW_WIDTH.dp, WINDOW_HEIGHT.dp)
+            )
 
-            MaterialTheme(
-                colorScheme = appColorScheme,
-                typography = AppTypography()
+            Window(
+                onCloseRequest = ::exitApplication,
+                title = APP_TITLE,
+                undecorated = true,
+                transparent = true,
+                resizable = false,
+                state = windowState
             ) {
 
-                Box(
-                    modifier = Modifier
-                        .background(Color.Transparent)
-                        .clip(defaultRoundedCornerShape)
+                MaterialTheme(
+                    colorScheme = appColorScheme,
+                    typography = AppTypography()
                 ) {
 
-                    Image(
-                        imageVector = IconBackground,
-                        contentDescription = null,
-                        contentScale = ContentScale.FillBounds,
+                    Box(
                         modifier = Modifier
-                            .fillMaxSize()
-                    )
+                            .background(Color.Transparent)
+                            .clip(defaultRoundedCornerShape)
+                    ) {
 
-                    Column {
-
-                        AppTitleBar(
-                            windowState,
-                            ::exitApplication
+                        Image(
+                            imageVector = IconBackground,
+                            contentDescription = null,
+                            contentScale = ContentScale.FillBounds,
+                            modifier = Modifier
+                                .fillMaxSize()
                         )
 
-                        ContentView(
-                            vipsLoaded = vipsLoaded
-                        )
+                        Column {
+
+                            AppTitleBar(
+                                windowState,
+                                ::exitApplication
+                            )
+
+                            ContentView(
+                                vipsLoaded = vipsLoaded
+                            )
+                        }
                     }
                 }
             }
         }
+
+    } catch (ex: Throwable) {
+
+        JOptionPane.showMessageDialog(
+            null,
+            ex.stackTraceToString().take(600) + "...",
+            "$APP_TITLE crashed",
+            JOptionPane.ERROR_MESSAGE
+        )
+
+        /* Force close the app. */
+        exitProcess(1)
     }
 }
 
