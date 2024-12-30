@@ -140,19 +140,37 @@ fun ContentView(
                             animatedImages.remove(removedImage)
                         }
 
-                        val originalBytes = file.readBytes()
+                        try {
 
-                        val metadata = Kim.readMetadata(originalBytes)
+                            val originalBytes = file.readBytes()
 
-                        val exifBytes = metadata!!.getExifThumbnailBytes()!!
+                            val metadata = Kim.readMetadata(originalBytes)
 
-                        val image = Image.makeFromEncoded(exifBytes).toComposeImageBitmap()
+                            val exifBytes = metadata?.getExifThumbnailBytes()
 
-                        images.add(image)
+                            if (exifBytes != null) {
+
+                                val image = Image.makeFromEncoded(exifBytes).toComposeImageBitmap()
+
+                                images.add(image)
+                            }
+
+                        } catch (ex: Throwable) {
+
+                            failures.appendLine("# ${file.absolutePath}")
+                            failures.appendLine("Failed to read thumbnail.")
+                            failures.appendLine()
+                        }
 
                         lastImageShownTime = currentMillis
                     }
                 }
+
+            } catch (ex: Throwable) {
+
+                failures.appendLine("!!! Processing cancelled due to an error !!!")
+                failures.appendLine(ex.stackTraceToString())
+                failures.appendLine()
 
             } finally {
 

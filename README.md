@@ -37,7 +37,7 @@ design will be restored.
 ## Installation
 
 To download the Windows
-installer [click here](https://github.com/stefanoltmann/thumbnail-fixer/releases/latest/download/thumbnail-fixer-1.0.4.x64.msix).
+installer [click here](https://github.com/stefanoltmann/thumbnail-fixer/releases/latest/download/thumbnail-fixer-1.0.5.x64.msix).
 
 For alternative installation options (including a macOS
 version) [click here](https://stefan-oltmann.de/thumbnail-fixer/download.html).
