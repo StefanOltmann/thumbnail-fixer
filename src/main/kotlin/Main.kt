@@ -26,6 +26,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
@@ -36,6 +37,7 @@ import app.photofox.vipsffm.Vips
 import ui.AppFooter
 import ui.AppTitleBar
 import ui.ContentView
+import ui.icons.AppIcon
 import ui.icons.IconBackground
 import ui.theme.AppTypography
 import ui.theme.appColorScheme
@@ -77,11 +79,15 @@ fun main() {
         application {
 
             val windowState = rememberWindowState(
-                size = DpSize(WINDOW_WIDTH.dp, WINDOW_HEIGHT.dp)
+                size = DpSize(
+                    width = WINDOW_WIDTH.dp,
+                    height = WINDOW_HEIGHT.dp + if (isWindows) 28.dp else 0.dp
+                )
             )
 
             Window(
                 onCloseRequest = ::exitApplication,
+                icon = rememberVectorPainter(AppIcon),
                 title = APP_TITLE,
                 /*
                  * Due to a bug undecorated Windows won't always
