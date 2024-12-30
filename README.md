@@ -32,7 +32,7 @@ with a peak of 2 GB. The data was read from and written to an internal M.2 SSD.
 ## Installation
 
 To download the Windows
-installer [click here](https://github.com/stefanoltmann/thumbnail-fixer/releases/latest/download/thumbnail-fixer-1.0.3.x64.msix).
+installer [click here](https://github.com/stefanoltmann/thumbnail-fixer/releases/latest/download/thumbnail-fixer-1.0.2.x64.msix).
 
 For alternative installation options (including a macOS
 version) [click here](https://stefan-oltmann.de/thumbnail-fixer/download.html).
