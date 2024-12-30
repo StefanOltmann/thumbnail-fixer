@@ -29,6 +29,11 @@ with a peak of 2 GB. The data was read from and written to an internal M.2 SSD.
 <img width="500" src="./docs/start_screen.png"/>
 <img width="500" src="./docs/processing_screen.png"/>
 
+Currently, on Windows, the app appears different due to a bug in
+Compose Multiplatform that prevents undecorated windows from
+displaying correctly. Once the issue is resolved, the undecorated
+design will be restored.
+
 ## Installation
 
 To download the Windows

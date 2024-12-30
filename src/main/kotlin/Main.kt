@@ -33,6 +33,7 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import app.photofox.vipsffm.Vips
+import ui.AppFooter
 import ui.AppTitleBar
 import ui.ContentView
 import ui.icons.IconBackground
@@ -82,8 +83,12 @@ fun main() {
             Window(
                 onCloseRequest = ::exitApplication,
                 title = APP_TITLE,
-                undecorated = true,
-                transparent = true,
+                /*
+                 * Due to a bug undecorated Windows won't always
+                 * show up on all Windows devices. Really nasty.
+                 */
+                undecorated = !isWindows,
+                transparent = !isWindows,
                 resizable = false,
                 state = windowState
             ) {
@@ -96,7 +101,12 @@ fun main() {
                     Box(
                         modifier = Modifier
                             .background(Color.Transparent)
-                            .clip(defaultRoundedCornerShape)
+                            .then(
+                                if (isWindows)
+                                    Modifier
+                                else
+                                    Modifier.clip(defaultRoundedCornerShape)
+                            )
                     ) {
 
                         Image(
@@ -109,14 +119,29 @@ fun main() {
 
                         Column {
 
-                            AppTitleBar(
-                                windowState,
-                                ::exitApplication
-                            )
+                            /*
+                             * We don't want to show a doubled title bar,
+                             * so we show a footer on Windows.
+                             */
+                            if (!isWindows) {
 
-                            ContentView(
-                                vipsLoaded = vipsLoaded
-                            )
+                                AppTitleBar(
+                                    windowState = windowState,
+                                    exitApplication = ::exitApplication
+                                )
+                            }
+
+                            Box(
+                                modifier = Modifier.weight(1F)
+                            ) {
+
+                                ContentView(
+                                    vipsLoaded = vipsLoaded
+                                )
+                            }
+
+                            if (isWindows)
+                                AppFooter()
                         }
                     }
                 }
