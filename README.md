@@ -2,7 +2,7 @@
 
 [![Kotlin](https://img.shields.io/badge/kotlin-2.0.21-blue.svg?logo=kotlin)](httpw://kotlinlang.org)
 
-[![Download from Microsoft Store](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/detail/9N0KK665LRMB?mode=direct)
+[![Download from Microsoft Store](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/detail/9N0KK665LRMB?mode=popup)
 
 This tool is designed to repair and enhance embedded thumbnails in images.
 
