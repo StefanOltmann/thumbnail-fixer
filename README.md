@@ -2,6 +2,8 @@
 
 [![Kotlin](https://img.shields.io/badge/kotlin-2.0.21-blue.svg?logo=kotlin)](httpw://kotlinlang.org)
 
+[![Download from Microsoft Store](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/detail/9N0KK665LRMB?mode=direct)
+
 This tool is designed to repair and enhance embedded thumbnails in images.
 
 ## Use case
@@ -36,22 +38,11 @@ design will be restored.
 
 ## Installation
 
-To download the Windows
-installer [click here](https://github.com/stefanoltmann/thumbnail-fixer/releases/latest/download/thumbnail-fixer-1.0.5.x64.msix).
+For Windows, it is recommended to use the version available in the [Microsoft Store](https://apps.microsoft.com/detail/9N0KK665LRMB) as this version is properly signed.
 
-For alternative installation options (including a macOS
-version) [click here](https://stefan-oltmann.de/thumbnail-fixer/download.html).
+If you prefer to avoid the Microsoft Store, you can download a self-signed installer [here](https://github.com/stefanoltmann/thumbnail-fixer/releases/download/1.0.5/thumbnail-fixer-1.0.5.x64.msix).
 
-#### Self-signed warning
-
-Windows will warn you about the self-signed certificate.
-As this is a free, open-source project, investing in a costly
-code signing certificate isn't practical.
-
-To continue, click "More info" and then "Run anyway".
-
-<img width="300" src="./docs/smart_screen_1.png"/>
-<img width="300" src="./docs/smart_screen_2.png"/>
+For alternative installation options, including a macOS version, [click here](https://stefan-oltmann.de/thumbnail-fixer/download.html).
 
 ## Used tech
 
