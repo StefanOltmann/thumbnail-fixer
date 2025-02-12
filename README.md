@@ -58,7 +58,7 @@ and [Ashampoo Kim](https://github.com/ashampoo/kim) for convenient metadata hand
 * JetBrains for making [Kotlin](https://kotlinlang.org).
 * John Cupitt for making [libvips](https://github.com/libvips/).
 * carrot for making [vips-ffm](https://github.com/lopcode/vips-ffm).
-* Mike Hearn for making [Hydraulic Conveyor](https://conveyor.hydraulic.dev)
+* Mike Hearn for making [Hydraulic Conveyor](https://conveyor.hydraulic.dev).
 * Yahor for making the [Valkyrie IDEA plugin](https://github.com/ComposeGears/Valkyrie).
 
 ## Contributions
