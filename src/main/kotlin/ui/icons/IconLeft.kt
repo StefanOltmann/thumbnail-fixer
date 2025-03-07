@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-@SuppressWarnings("MagicNumber")
+@Suppress("MagicNumber")
 val IconLeft: ImageVector
     get() {
         if (_IconLeft != null) {

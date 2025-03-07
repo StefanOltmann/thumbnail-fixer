@@ -19,7 +19,7 @@
 
 package model
 
-@SuppressWarnings("MagicNumber")
+@Suppress("MagicNumber")
 enum class ThumbnailResolution(
     val longSidePx: Int
 ) {
