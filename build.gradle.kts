@@ -39,13 +39,13 @@ dependencies {
     implementation(compose.components.resources)
 
     /* Coroutines */
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
 
     /* Metadata read & write */
-    implementation("com.ashampoo:kim:0.20.1")
+    implementation("com.ashampoo:kim:0.23")
 
     /* VIPS */
-    implementation("app.photofox.vips-ffm:vips-ffm-core:1.4.0")
+    implementation("app.photofox.vips-ffm:vips-ffm-core:1.5.2")
 
     /* Conveyor */
     linuxAmd64(compose.desktop.linux_x64)
