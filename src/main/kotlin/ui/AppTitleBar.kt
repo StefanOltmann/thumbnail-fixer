@@ -35,6 +35,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowScope
 import androidx.compose.ui.window.WindowState
+import de.stefan_oltmann.mines.ui.icons.IconKofi
 import ui.icons.*
 import ui.theme.DoubleSpacer
 import ui.theme.FillSpacer
@@ -87,9 +88,9 @@ fun WindowScope.AppTitleBar(
             DoubleSpacer()
 
             ClickableIcon(
-                imageVector = IconDonate,
+                imageVector = IconKofi,
                 onClick = {
-                    uriHandler.openUri("https://github.com/sponsors/StefanOltmann")
+                    uriHandler.openUri("https://ko-fi.com/StefanOltmann")
                 }
             )
 

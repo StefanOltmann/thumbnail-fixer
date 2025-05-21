@@ -2,6 +2,10 @@
 
 [![Kotlin](https://img.shields.io/badge/kotlin-2.1.21-blue.svg?logo=kotlin)](httpw://kotlinlang.org)
 
+<a href="https://ko-fi.com/StefanOltmann">
+    <img src="assets/support_me_on_kofi_dark.png" alt="Support me on Ko-fi" width="200">
+</a>
+
 [![Download from Microsoft Store](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/detail/9N0KK665LRMB?mode=popup)
 
 This tool is designed to repair and enhance embedded thumbnails in images.
