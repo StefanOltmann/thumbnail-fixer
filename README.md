@@ -1,6 +1,6 @@
 # 🔧 Thumbnail Fixer 🔧
 
-[![Kotlin](https://img.shields.io/badge/kotlin-2.0.21-blue.svg?logo=kotlin)](httpw://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.1.21-blue.svg?logo=kotlin)](httpw://kotlinlang.org)
 
 [![Download from Microsoft Store](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/detail/9N0KK665LRMB?mode=popup)
 
