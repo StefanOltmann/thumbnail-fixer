@@ -42,7 +42,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
 
     /* Metadata read & write */
-    implementation("com.ashampoo:kim:0.23")
+    implementation("com.ashampoo:kim:0.25")
 
     /* VIPS */
     implementation("app.photofox.vips-ffm:vips-ffm-core:1.5.2")

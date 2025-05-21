@@ -77,7 +77,7 @@ fun AppFooter() {
         DefaultSpacer()
 
         Text(
-            text = "Support me on Ko-Fi",
+            text = "Support me on Ko-fi",
             color = MaterialTheme.colorScheme.onBackground,
             style = MaterialTheme.typography.titleMedium,
             modifier = Modifier.offset(y = -2.dp)
