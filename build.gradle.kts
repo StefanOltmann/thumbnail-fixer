@@ -79,6 +79,11 @@ tasks.register<Copy>("copyWindowsDlls") {
 
     from("${rootProject.projectDir}/resources/windows")
     into("${layout.buildDirectory.get()}/compose/binaries/main/app/Thumbnail Fixer/app")
+
+    // Only execute this task when running on Windows
+    onlyIf {
+        org.gradle.internal.os.OperatingSystem.current().isWindows
+    }
 }
 
 gradle.projectsEvaluated {
