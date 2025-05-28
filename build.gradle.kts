@@ -61,9 +61,16 @@ compose.desktop {
         mainClass = "MainKt"
 
         nativeDistributions {
+
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+
             packageName = "Thumbnail Fixer"
+
             packageVersion = version.toString()
+
+            appResourcesRootDir.set(
+                rootProject.layout.projectDirectory.dir("resources")
+            )
         }
     }
 }
