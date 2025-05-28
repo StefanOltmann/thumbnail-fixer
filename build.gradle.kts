@@ -67,13 +67,29 @@ compose.desktop {
             packageName = "Thumbnail Fixer"
 
             packageVersion = version.toString()
-
-            appResourcesRootDir.set(
-                rootProject.layout.projectDirectory.dir("resources")
-            )
         }
     }
 }
+
+// region Copy Windows DLLs to distribution
+tasks.register<Copy>("copyWindowsDlls") {
+
+    description = "Copy Windows DLLs to the distribution directory"
+    group = "build"
+
+    from("${rootProject.projectDir}/resources/windows")
+    into("${layout.buildDirectory.get()}/compose/binaries/main/app/Thumbnail Fixer/app")
+}
+
+gradle.projectsEvaluated {
+    tasks.named("createDistributable") {
+        finalizedBy("copyWindowsDlls")
+    }
+    tasks.named("runDistributable") {
+        dependsOn("copyWindowsDlls")
+    }
+}
+// endregion
 
 // region Work around temporary Compose bugs.
 configurations.all {
