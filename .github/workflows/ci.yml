@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: '23.0.2+7'
+          java-version: '24'
       - name: Display Java version
         run: java -version
       - name: List all files

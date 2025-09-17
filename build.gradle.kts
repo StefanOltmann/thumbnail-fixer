@@ -28,7 +28,7 @@ repositories {
 
 kotlin {
 
-    jvmToolchain(23)
+    jvmToolchain(24)
 }
 
 dependencies {
@@ -39,13 +39,16 @@ dependencies {
     implementation(compose.components.resources)
 
     /* Coroutines */
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
 
     /* Metadata read & write */
-    implementation("com.ashampoo:kim:0.25")
+    implementation("com.ashampoo:kim:0.26.2")
+
+    /* IO */
+    implementation("org.jetbrains.kotlinx:kotlinx-io-core:0.8.0")
 
     /* VIPS */
-    implementation("app.photofox.vips-ffm:vips-ffm-core:1.5.2")
+    implementation("app.photofox.vips-ffm:vips-ffm-core:1.9.1")
 
     /* Conveyor */
     linuxAmd64(compose.desktop.linux_x64)
