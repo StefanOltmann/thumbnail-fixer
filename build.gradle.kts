@@ -1,11 +1,11 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
-    kotlin("jvm")
-    id("org.jetbrains.compose")
-    id("org.jetbrains.kotlin.plugin.compose")
-    id("me.qoomon.git-versioning") version "6.4.3"
-    id("dev.hydraulic.conveyor") version "1.12"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.compose)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.git.versioning)
+    alias(libs.plugins.conveyor)
 }
 
 group = "io.github.stefanoltmann"
@@ -39,16 +39,16 @@ dependencies {
     implementation(compose.components.resources)
 
     /* Coroutines */
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    implementation(libs.kotlinx.coroutines.core)
 
     /* Metadata read & write */
-    implementation("com.ashampoo:kim:0.26.2")
+    implementation(libs.kim)
 
     /* IO */
-    implementation("org.jetbrains.kotlinx:kotlinx-io-core:0.8.0")
+    implementation(libs.kotlinx.io.core)
 
     /* VIPS */
-    implementation("app.photofox.vips-ffm:vips-ffm-core:1.9.1")
+    implementation(libs.vips.ffm.core)
 
     /* Conveyor */
     linuxAmd64(compose.desktop.linux_x64)
