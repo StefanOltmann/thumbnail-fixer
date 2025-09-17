@@ -1,10 +1,7 @@
 # 🔧 Thumbnail Fixer 🔧
 
 [![Kotlin](https://img.shields.io/badge/kotlin-2.1.21-blue.svg?logo=kotlin)](httpw://kotlinlang.org)
-
-<a href="https://ko-fi.com/StefanOltmann">
-    <img src="assets/support_me_on_kofi_dark.png" alt="Support me on Ko-fi" width="200">
-</a>
+[![Sponsors](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub)](https://github.com/sponsors/StefanOltmann)
 
 [![Download from Microsoft Store](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/detail/9N0KK665LRMB?mode=popup)
 
