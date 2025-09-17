@@ -22,52 +22,47 @@ package ui
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Text
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
-import ui.theme.DefaultSpacer
-import ui.theme.FillSpacer
-import ui.theme.HalfSpacer
+import androidx.compose.ui.unit.sp
+import ui.icons.IconGitHubSponsors
+import ui.theme.defaultSpacing
+
+private val backgroundColor = Color(0xFF28292A)
+private val heartColor = Color(0xFFEA4AAA)
 
 @Composable
-fun AppFooter() {
-
-    val uriHandler = LocalUriHandler.current
+fun SponsorButton(
+    onClick: () -> Unit
+) {
 
     Row(
-        horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(6.dp),
         modifier = Modifier
-            .height(32.dp)
-            .background(Color.Black)
-            .fillMaxWidth()
-            .clickable {
-                uriHandler.openUri("https://github.com/sponsors/StefanOltmann")
-            }
+            .background(backgroundColor, RoundedCornerShape(4.dp))
+            .height(24.dp)
+            .padding(horizontal = defaultSpacing)
+            .clickable(onClick = onClick)
     ) {
-
-        DefaultSpacer()
-
+        Icon(
+            imageVector = IconGitHubSponsors,
+            contentDescription = null,
+            tint = heartColor,
+            modifier = Modifier.size(16.dp)
+        )
         Text(
-            text = "Made by Stefan Oltmann",
-            color = MaterialTheme.colorScheme.onBackground,
-            style = MaterialTheme.typography.titleMedium,
+            text = "Sponsor",
+            fontSize = 14.sp,
+            color = Color.White,
+            maxLines = 1,
             modifier = Modifier.offset(y = -1.dp)
         )
-
-        FillSpacer()
-
-        SponsorButton(
-            onClick = {
-                uriHandler.openUri("https://github.com/sponsors/StefanOltmann")
-            }
-        )
-
-        HalfSpacer()
     }
 }

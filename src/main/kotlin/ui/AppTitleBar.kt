@@ -20,11 +20,11 @@
 package ui
 
 import APP_TITLE
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.window.WindowDraggableArea
 import androidx.compose.material.Text
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -35,8 +35,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowScope
 import androidx.compose.ui.window.WindowState
-import de.stefan_oltmann.mines.ui.icons.IconKofi
-import ui.icons.*
+import ui.icons.AppIcon
+import ui.icons.IconClose
+import ui.icons.IconGithub
+import ui.icons.IconMinimize
 import ui.theme.DoubleSpacer
 import ui.theme.FillSpacer
 import ui.theme.halfSpacing
@@ -62,10 +64,9 @@ fun WindowScope.AppTitleBar(
                 )
         ) {
 
-            Icon(
+            Image(
                 imageVector = AppIcon,
-                contentDescription = null,
-                tint = MaterialTheme.colorScheme.onBackground
+                contentDescription = null
             )
 
             Text(
@@ -88,16 +89,15 @@ fun WindowScope.AppTitleBar(
             DoubleSpacer()
 
             ClickableIcon(
-                imageVector = IconKofi,
-                onClick = {
-                    uriHandler.openUri("https://ko-fi.com/StefanOltmann")
-                }
-            )
-
-            ClickableIcon(
                 imageVector = IconGithub,
                 onClick = {
                     uriHandler.openUri("https://github.com/StefanOltmann/thumbnail-fixer")
+                }
+            )
+
+            SponsorButton(
+                onClick = {
+                    uriHandler.openUri("https://github.com/sponsors/StefanOltmann")
                 }
             )
 
