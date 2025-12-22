@@ -1,22 +1,25 @@
 [versions]
-kotlin = "2.2.20"
-compose = "1.9.0"
+kotlin = "2.3.0"
+compose = "1.9.3"
 coroutines = "1.10.2"
 kotlinx-io = "0.8.0"
 kim = "0.26.2"
 vips = "1.9.1"
+platformtools = "0.7.4"
 git-versioning = "6.4.3"
-conveyor = "1.12"
+hydraulicConveyor = "1.12"
 
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-io-core = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version.ref = "kotlinx-io" }
 kim = { module = "com.ashampoo:kim", version.ref = "kim" }
 vips-ffm-core = { module = "app.photofox.vips-ffm:vips-ffm-core", version.ref = "vips" }
+platformtools-core = { module = "io.github.kdroidfilter:platformtools.core", version.ref = "platformtools" }
+platformtools-darkmodedetector = { module = "io.github.kdroidfilter:platformtools.darkmodedetector", version.ref = "platformtools" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 git-versioning = { id = "me.qoomon.git-versioning", version.ref = "git-versioning" }
-conveyor = { id = "dev.hydraulic.conveyor", version.ref = "conveyor" }
+conveyor = { id = "dev.hydraulic.conveyor", version.ref = "hydraulicConveyor" }

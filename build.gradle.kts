@@ -38,6 +38,10 @@ dependencies {
     implementation(compose.material3)
     implementation(compose.components.resources)
 
+    /* Platform Tools */
+    implementation(libs.platformtools.core)
+    implementation(libs.platformtools.darkmodedetector)
+
     /* Coroutines */
     implementation(libs.kotlinx.coroutines.core)
 

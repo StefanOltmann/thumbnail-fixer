@@ -34,6 +34,7 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import app.photofox.vipsffm.Vips
+import io.github.kdroidfilter.platformtools.darkmodedetector.windows.setWindowsAdaptiveTitleBar
 import ui.AppFooter
 import ui.AppTitleBar
 import ui.ContentView
@@ -58,7 +59,7 @@ fun main() {
     try {
 
         /*
-         * For Windows we bundle vips, but for macOS it must be installed using Homebrew.
+         * For Windows, we bundle vips, but for macOS it must be installed using Homebrew.
          */
         if (!isWindows) {
             System.setProperty("vipsffm.libpath.vips.override", "/opt/homebrew/lib/libvips.dylib")
@@ -72,7 +73,7 @@ fun main() {
 
             true
 
-        } catch (ignore: Throwable) {
+        } catch (_: Throwable) {
             false
         }
 
@@ -90,7 +91,7 @@ fun main() {
                 icon = rememberVectorPainter(AppIcon),
                 title = APP_TITLE,
                 /*
-                 * Due to a bug undecorated Windows won't always
+                 * Due to a bug, undecorated Windows won't always
                  * show up on all Windows devices. Really nasty.
                  */
                 undecorated = !isWindows,
@@ -98,6 +99,8 @@ fun main() {
                 resizable = false,
                 state = windowState
             ) {
+
+                window.setWindowsAdaptiveTitleBar(dark = true)
 
                 MaterialTheme(
                     colorScheme = appColorScheme,
@@ -163,7 +166,7 @@ fun main() {
             JOptionPane.ERROR_MESSAGE
         )
 
-        /* Force close the app. */
+        /* Force to close the app. */
         exitProcess(1)
     }
 }
