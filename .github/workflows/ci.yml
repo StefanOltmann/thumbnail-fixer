@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: '25'
+          java-version: '24'
       - name: Display Java version
         run: java -version
       - name: List all files
@@ -29,7 +29,7 @@ jobs:
           chmod +x gradlew
           ./gradlew build
       - name: Run Conveyor
-        uses: hydraulic-software/conveyor/actions/build@v21.0
+        uses: hydraulic-software/conveyor/actions/build@v19.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
